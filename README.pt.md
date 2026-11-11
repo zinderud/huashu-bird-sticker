@@ -8,11 +8,13 @@
 
 **Veja a biblioteca inteira em uso em [birdalbum.com](https://birdalbum.com/pt-br/?utm_source=github&utm_medium=readme&utm_campaign=bird-sticker).** O Bird Album é um guia de aves gratuito feito com estes adesivos: procure qualquer espécie pelo nome em 15 idiomas, veja onde ela vive e em quais meses aparece, e abra um mapa com 8.171 pontos de observação de aves que mostra o que as pessoas estão vendo em cada um neste mês.
 
-11.011 espécies de aves em 45 ordens e 249 famílias, segundo a [AviList v2026](https://www.avilist.org/), a lista global unificada publicada pela primeira vez em 2025 (a lista do IOC foi encerrada em favor dela). Todas as espécies que a AviList não marca como extintas ou possivelmente extintas estão incluídas, além de 43 espécies marcadas que já tinham adesivo: extintas, extintas na natureza, possivelmente extintas ou, em dois casos, outrora extintas na natureza e depois reintroduzidas (veja `extinctionStatus`). Todas as espécies têm adesivo. Cada espécie vem com dados estruturados: taxonomia, nomes em até 43 idiomas, IDs em outras bases de dados e a partir de que cada adesivo foi gerado.
+Mais de 11.000 espécies de aves em 45 ordens e 249 famílias, segundo a [AviList v2026](https://www.avilist.org/), a lista global unificada publicada pela primeira vez em 2025 (a lista do IOC foi encerrada em favor dela). Todas as espécies que a AviList não marca como extintas ou possivelmente extintas estão incluídas, além de 43 espécies marcadas que já tinham adesivo: extintas, extintas na natureza, possivelmente extintas ou, em dois casos, outrora extintas na natureza e depois reintroduzidas (veja `extinctionStatus`). Todas as espécies têm adesivo. Cada espécie vem com dados estruturados: taxonomia, nomes em até 43 idiomas, IDs em outras bases de dados e a partir de que cada adesivo foi gerado.
 
 > **A versão 2.0 passou a taxonomia do IOC 15.2 para a AviList v2026.** 82 espécies mudaram de nome científico (e, com ele, de `id` e de caminho do adesivo), 91 antigas espécies agora são subespécies de outra espécie e 30 espécies novas foram separadas. Todas as mudanças estão listadas em [`data/crosswalk-ioc15.2-avilist2026.csv`](data/crosswalk-ioc15.2-avilist2026.csv), e cada registro guarda o antigo ID do IOC em `previous`. Veja o [CHANGELOG](CHANGELOG.md).
 
 ![40 adesivos de 15 ordens de aves](previews/hero.webp)
+
+**Gerados por IA, e cada arquivo informa isso.** Os metadados XMP/IPTC de cada adesivo indicam que se trata de uma ilustração gerada por IA, e não de uma fotografia (tipo de fonte digital IPTC `trainedAlgorithmicMedia`), o sistema de IA utilizado, que ela não foi verificada por especialistas e pode conter erros, a licença e um link para este repositório.
 
 **Licença em resumo:** os adesivos estão sob a licença [CC BY 4.0](LICENSE.md): você pode usá-los para qualquer fim, inclusive comercial, e também editá-los e redistribuí-los, desde que cite huashu-bird-sticker com um link para este repositório. Os dados são MIT, e as partes de terceiros estão listadas no [NOTICE](NOTICE.md).
 
@@ -24,7 +26,7 @@ Todos os adesivos são servidos pela CDN jsDelivr (com CORS), então você pode 
 <img src="https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/stickers/Coraciiformes/Alcedinidae/Alcedo_atthis.webp" alt="Guarda-rios-comum" width="240">
 ```
 
-Para achar uma ave pelo nome, carregue [`data/stickers.json`](data/stickers.json) (2,7 MB: nome científico, inglês e chinês, caminho do arquivo e a página da espécie em birdalbum.com para cada uma das 11.011 espécies; os 91 adesivos de subespécies estão em `forms`, em `data/species.json`). Os nomes em 43 idiomas estão em [`data/names.csv`](data/names.csv).
+Para achar uma ave pelo nome, carregue [`data/stickers.json`](data/stickers.json) (2,7 MB: nome científico, inglês e chinês, caminho do arquivo e a página da espécie em birdalbum.com para cada espécie; os 91 adesivos de subespécies estão em `forms`, em `data/species.json`). Os nomes em 43 idiomas estão em [`data/names.csv`](data/names.csv).
 
 ```js
 const idx = await (await fetch("https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/data/stickers.json")).json();

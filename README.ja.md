@@ -8,11 +8,13 @@
 
 **ライブラリ全体の使われ方は[birdalbum.com](https://birdalbum.com/ja/?utm_source=github&utm_medium=readme&utm_campaign=bird-sticker)で見られます。** Bird Albumは、このステッカーを土台にした無料の野鳥図鑑サイトです。15言語で種名を検索でき、その鳥がどこにいて何月ごろ見られるかがわかります。地図には8,171か所の探鳥地が載っていて、各地点で今月どんな鳥がよく記録されているかを確認できます。
 
-鳥11,011種、45目249科。全球統一の鳥類リスト[AviList v2026](https://www.avilist.org/)に沿って整理しています。AviListは2025年に初めて公開された全球統一リストです（IOCのリストは更新を終え、AviListに移行しました）。AviListで絶滅・絶滅の可能性ありとされていない種はすべて含み、さらに絶滅関連の区分が付いていても、すでにステッカーのあった43種を残してあります。区分は絶滅、野生絶滅、絶滅の可能性あり、そして2種は一度野生絶滅したあと再導入されたものです（`extinctionStatus`を参照）。すべての種にステッカーがあります。各種には、分類、最大43言語の名前、各データベースのID、そして各ステッカーが何をもとに生成されたかといった構造化データが付いています。
+鳥1万1千種あまり、45目249科。全球統一の鳥類リスト[AviList v2026](https://www.avilist.org/)に沿って整理しています。AviListは2025年に初めて公開された全球統一リストです（IOCのリストは更新を終え、AviListに移行しました）。AviListで絶滅・絶滅の可能性ありとされていない種はすべて含み、さらに絶滅関連の区分が付いていても、すでにステッカーのあった43種を残してあります。区分は絶滅、野生絶滅、絶滅の可能性あり、そして2種は一度野生絶滅したあと再導入されたものです（`extinctionStatus`を参照）。すべての種にステッカーがあります。各種には、分類、最大43言語の名前、各データベースのID、そして各ステッカーが何をもとに生成されたかといった構造化データが付いています。
 
 > **2.0版で、分類をIOC 15.2からAviList v2026に切り替えました。** 82種の学名が変わり（それに伴って`id`とステッカーのパスも変わりました）、従来は独立種だった91種が別種の亜種になり、30種が新たに分割されました。変更はすべて[`data/crosswalk-ioc15.2-avilist2026.csv`](data/crosswalk-ioc15.2-avilist2026.csv)に載せてあり、各レコードの`previous`には旧IOCのIDを残しています。[CHANGELOG](CHANGELOG.md)も参照してください。
 
 ![15の目から選んだ40枚のステッカー](previews/hero.webp)
+
+**AI生成であることを、すべてのファイルに明記しています。** 各ステッカーファイルのXMP/IPTCメタデータには、AIで生成したイラストであり写真ではないこと（IPTCデジタルソースタイプ`trainedAlgorithmicMedia`）、使用したAIシステム、専門家による確認を経ておらず誤りを含む可能性があること、ライセンス、このリポジトリへのリンクを記載しています。
 
 **ライセンスを一言で:** ステッカーは[CC BY 4.0](LICENSE.md)です。huashu-bird-stickerの名前とこのリポジトリへのリンクを添えれば、商用を含むどんな用途にも使え、加工や再配布もできます。データはMITで、第三者に由来する部分は[NOTICE](NOTICE.md)に記載しています。
 
@@ -24,7 +26,7 @@
 <img src="https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/stickers/Coraciiformes/Alcedinidae/Alcedo_atthis.webp" alt="カワセミ" width="240">
 ```
 
-名前でステッカーを探すには[`data/stickers.json`](data/stickers.json)を読み込みます（2.7 MB。11,011種それぞれの学名、英名、中国語名、ファイルパス、birdalbum.comの種ページ。亜種ステッカー91枚は`data/species.json`の`forms`にあります）。43言語の名前は[`data/names.csv`](data/names.csv)にあります。
+名前でステッカーを探すには[`data/stickers.json`](data/stickers.json)を読み込みます（2.7 MB。各種の学名、英名、中国語名、ファイルパス、birdalbum.comの種ページ。亜種ステッカー91枚は`data/species.json`の`forms`にあります）。43言語の名前は[`data/names.csv`](data/names.csv)にあります。
 
 ```js
 const idx = await (await fetch("https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/data/stickers.json")).json();

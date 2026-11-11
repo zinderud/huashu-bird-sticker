@@ -8,11 +8,13 @@
 
 **Die ganze Bibliothek im Einsatz sehen Sie auf [birdalbum.com](https://birdalbum.com/de/?utm_source=github&utm_medium=readme&utm_campaign=bird-sticker).** Bird Album ist ein kostenloser Vogelführer auf Basis dieser Sticker: Jede Art lässt sich in 15 Sprachen nach ihrem Namen nachschlagen, dazu sieht man, wo sie lebt und in welchen Monaten sie anzutreffen ist, und eine Karte mit 8.171 Beobachtungs-Hotspots zeigt, was dort in diesem Monat gerade gesehen wird.
 
-11.011 Vogelarten in 45 Ordnungen und 249 Familien, nach [AviList v2026](https://www.avilist.org/), der einheitlichen globalen Checkliste, die 2025 erstmals erschienen ist (die IOC-Liste wurde zu ihren Gunsten eingestellt). Enthalten ist jede Art, die AviList nicht als ausgestorben oder möglicherweise ausgestorben kennzeichnet, dazu 43 gekennzeichnete Arten, für die es schon einen Sticker gab: ausgestorben, in der Wildnis ausgestorben, möglicherweise ausgestorben oder, bei zweien, einst in der Wildnis ausgestorben und inzwischen wieder angesiedelt (siehe `extinctionStatus`). Jede Art hat einen Sticker. Zu jeder Art gibt es strukturierte Daten: Taxonomie, Namen in bis zu 43 Sprachen, IDs aus anderen Datenbanken und wonach jeder Sticker erzeugt wurde.
+Über 11.000 Vogelarten in 45 Ordnungen und 249 Familien, nach [AviList v2026](https://www.avilist.org/), der einheitlichen globalen Checkliste, die 2025 erstmals erschienen ist (die IOC-Liste wurde zu ihren Gunsten eingestellt). Enthalten ist jede Art, die AviList nicht als ausgestorben oder möglicherweise ausgestorben kennzeichnet, dazu 43 gekennzeichnete Arten, für die es schon einen Sticker gab: ausgestorben, in der Wildnis ausgestorben, möglicherweise ausgestorben oder, bei zweien, einst in der Wildnis ausgestorben und inzwischen wieder angesiedelt (siehe `extinctionStatus`). Jede Art hat einen Sticker. Zu jeder Art gibt es strukturierte Daten: Taxonomie, Namen in bis zu 43 Sprachen, IDs aus anderen Datenbanken und wonach jeder Sticker erzeugt wurde.
 
 > **Version 2.0 hat die Taxonomie von IOC 15.2 auf AviList v2026 umgestellt.** 82 Arten haben ihren wissenschaftlichen Namen geändert (und damit ihre `id` und den Pfad ihres Stickers), 91 frühere Arten sind jetzt Unterarten einer anderen Art, und 30 neue Arten wurden abgespalten. Alle Änderungen stehen in [`data/crosswalk-ioc15.2-avilist2026.csv`](data/crosswalk-ioc15.2-avilist2026.csv), und jeder Eintrag behält seine alte IOC-ID unter `previous`. Siehe [CHANGELOG](CHANGELOG.md).
 
 ![40 Sticker aus 15 Vogelordnungen](previews/hero.webp)
+
+**KI-generiert, und jede Datei sagt es.** In den XMP/IPTC-Metadaten jedes Stickers steht, dass es sich um eine KI-generierte Illustration und kein Foto handelt (IPTC Digital Source Type `trainedAlgorithmicMedia`), welches KI-System verwendet wurde, dass sie nicht von Fachleuten geprüft wurde und Fehler enthalten kann, dazu die Lizenz und ein Link zu diesem Repository.
 
 **Lizenz in Kürze:** Die Sticker stehen unter [CC BY 4.0](LICENSE.md): Sie dürfen für alles genutzt werden, auch kommerziell, ebenso bearbeitet und weitergegeben, sofern Sie huashu-bird-sticker mit einem Link auf dieses Repository nennen. Die Daten stehen unter MIT, Teile von Dritten sind in [NOTICE](NOTICE.md) aufgeführt.
 
@@ -24,7 +26,7 @@ Jeder Sticker wird über das jsDelivr-CDN ausgeliefert (mit CORS), Sie können i
 <img src="https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/stickers/Coraciiformes/Alcedinidae/Alcedo_atthis.webp" alt="Eisvogel" width="240">
 ```
 
-Um einen Vogel nach Namen zu finden, laden Sie [`data/stickers.json`](data/stickers.json) (2,7 MB: wissenschaftlicher, englischer und chinesischer Name, Dateipfad und die Artseite auf birdalbum.com für jede der 11.011 Arten; die 91 Unterarten-Sticker stehen unter `forms` in `data/species.json`). Namen in 43 Sprachen stehen in [`data/names.csv`](data/names.csv).
+Um einen Vogel nach Namen zu finden, laden Sie [`data/stickers.json`](data/stickers.json) (2,7 MB: wissenschaftlicher, englischer und chinesischer Name, Dateipfad und die Artseite auf birdalbum.com für jede Art; die 91 Unterarten-Sticker stehen unter `forms` in `data/species.json`). Namen in 43 Sprachen stehen in [`data/names.csv`](data/names.csv).
 
 ```js
 const idx = await (await fetch("https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/data/stickers.json")).json();

@@ -8,11 +8,13 @@
 
 **這套貼紙的完整用法，請到 [birdalbum.com](https://birdalbum.com/zh-hant/?utm_source=github&utm_medium=readme&utm_campaign=bird-sticker) 看看。** Bird Album 是用這個貼紙庫做的免費鳥類網站：15 種語言都能搜尋鳥名，看每種鳥分布在哪裡、幾月看得到；地圖上有 8,171 個賞鳥點，每處都列出這個月大家常記錄到的鳥。
 
-11,011 種鳥，每種一張貼紙，共 45 目 249 科，依全球統一鳥類名錄 [AviList v2026](https://www.avilist.org/) 整理。AviList 是 2025 年首次發布的全球統一名錄（IOC 名錄已停止更新，轉而採用它）。AviList 沒有標為滅絕或可能滅絕的物種全部收錄；另有 43 種帶滅絕相關標記、已有貼紙的物種也保留了：滅絕、野外滅絕、可能滅絕，其中兩種曾野外滅絕、現已重新引入（見 `extinctionStatus`）。每個物種都有貼紙。每種鳥都附有結構化資料：分類、最多 43 種語言的鳥名、各大資料庫的編號，以及每張貼紙是依據什麼生成的。
+1.1 萬多種鳥，每種一張貼紙，共 45 目 249 科，依全球統一鳥類名錄 [AviList v2026](https://www.avilist.org/) 整理。AviList 是 2025 年首次發布的全球統一名錄（IOC 名錄已停止更新，轉而採用它）。AviList 沒有標為滅絕或可能滅絕的物種全部收錄；另有 43 種帶滅絕相關標記、已有貼紙的物種也保留了：滅絕、野外滅絕、可能滅絕，其中兩種曾野外滅絕、現已重新引入（見 `extinctionStatus`）。每個物種都有貼紙。每種鳥都附有結構化資料：分類、最多 43 種語言的鳥名、各大資料庫的編號，以及每張貼紙是依據什麼生成的。
 
 > **2.0 版把分類從 IOC 15.2 換成了 AviList v2026。** 82 個物種改了學名（`id` 與貼紙路徑隨之改變），91 個原本獨立的種現在成了別種的亞種，另有 30 個新種從原有物種中拆出。每一處變動都列在 [`data/crosswalk-ioc15.2-avilist2026.csv`](data/crosswalk-ioc15.2-avilist2026.csv)，每筆紀錄的 `previous` 保留了舊的 IOC 編號。詳見 [CHANGELOG](CHANGELOG.md)。
 
 ![40張貼紙，來自15個目](previews/hero.webp)
+
+**AI 生成，每個檔案裡都寫明了。** 每個貼紙檔案的 XMP/IPTC 中繼資料都寫著：這是 AI 生成的插畫，不是照片（IPTC 數位來源類型 `trainedAlgorithmicMedia`），用的是哪個 AI 系統，未經專家核對、可能有錯，以及授權和本儲存庫的連結。
 
 **授權一句話：** 貼紙採用 [CC BY 4.0](LICENSE.md) 授權，可以免費用於任何用途，包括商業用途、修改與再散布，只要標明來自 huashu-bird-sticker 並附上本儲存庫連結。資料採用 MIT，第三方部分請見 [NOTICE](NOTICE.md)。
 
@@ -24,7 +26,7 @@
 <img src="https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/stickers/Coraciiformes/Alcedinidae/Alcedo_atthis.webp" alt="普通翠鳥" width="240">
 ```
 
-要按鳥名查貼紙，載入 [`data/stickers.json`](data/stickers.json)（2.7 MB，11,011 種各一筆：學名、英文名、簡體中文名、檔案路徑和 birdalbum.com 上的鳥種頁；91 張亞種貼紙在 `data/species.json` 的 `forms` 裡）。43 種語言的鳥名在 [`data/names.csv`](data/names.csv)。
+要按鳥名查貼紙，載入 [`data/stickers.json`](data/stickers.json)（2.7 MB，每種一筆：學名、英文名、簡體中文名、檔案路徑和 birdalbum.com 上的鳥種頁；91 張亞種貼紙在 `data/species.json` 的 `forms` 裡）。43 種語言的鳥名在 [`data/names.csv`](data/names.csv)。
 
 ```js
 const idx = await (await fetch("https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/data/stickers.json")).json();

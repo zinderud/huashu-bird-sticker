@@ -8,11 +8,13 @@
 
 **Vea toda la biblioteca en uso en [birdalbum.com](https://birdalbum.com/es/?utm_source=github&utm_medium=readme&utm_campaign=bird-sticker).** Bird Album es una guía de aves gratuita creada con estas pegatinas: busque cualquier especie por su nombre en 15 idiomas, consulte dónde vive y en qué meses se la puede ver, y abra un mapa de 8171 puntos de observación de aves que muestra lo que la gente está viendo en cada uno este mes.
 
-11 011 especies de aves en 45 órdenes y 249 familias, según [AviList v2026](https://www.avilist.org/), la lista global unificada publicada por primera vez en 2025 (la lista de la IOC dejó de actualizarse en su favor). Están todas las especies que AviList no marca como extintas o posiblemente extintas, más 43 especies marcadas que ya tenían pegatina: extintas, extintas en estado silvestre, posiblemente extintas o, en dos casos, extintas en estado silvestre en el pasado y reintroducidas después (véase `extinctionStatus`). Todas las especies tienen pegatina. Cada especie viene con datos estructurados: taxonomía, nombres en hasta 43 idiomas, identificadores de otras bases de datos y a partir de qué se generó cada pegatina.
+Más de 11 000 especies de aves en 45 órdenes y 249 familias, según [AviList v2026](https://www.avilist.org/), la lista global unificada publicada por primera vez en 2025 (la lista de la IOC dejó de actualizarse en su favor). Están todas las especies que AviList no marca como extintas o posiblemente extintas, más 43 especies marcadas que ya tenían pegatina: extintas, extintas en estado silvestre, posiblemente extintas o, en dos casos, extintas en estado silvestre en el pasado y reintroducidas después (véase `extinctionStatus`). Todas las especies tienen pegatina. Cada especie viene con datos estructurados: taxonomía, nombres en hasta 43 idiomas, identificadores de otras bases de datos y a partir de qué se generó cada pegatina.
 
 > **La versión 2.0 pasó la taxonomía de la IOC 15.2 a AviList v2026.** 82 especies cambiaron de nombre científico (y con ello su `id` y la ruta de su pegatina), 91 antiguas especies son ahora subespecies de otra especie y se separaron 30 especies nuevas. Todos los cambios están en [`data/crosswalk-ioc15.2-avilist2026.csv`](data/crosswalk-ioc15.2-avilist2026.csv), y cada registro conserva su antiguo identificador de la IOC en `previous`. Véase el [CHANGELOG](CHANGELOG.md).
 
 ![40 pegatinas de 15 órdenes de aves](previews/hero.webp)
+
+**Generadas con IA, y cada archivo lo indica.** Los metadatos XMP/IPTC de cada pegatina señalan que es una ilustración generada con IA y no una fotografía (tipo de fuente digital IPTC `trainedAlgorithmicMedia`), el sistema de IA utilizado, que no ha sido verificada por expertos y puede contener errores, la licencia y un enlace a este repositorio.
 
 **Licencia en breve:** las pegatinas tienen licencia [CC BY 4.0](LICENSE.md): puede usarlas para cualquier fin, incluido el comercial, y también editarlas y redistribuirlas, siempre que mencione huashu-bird-sticker con un enlace a este repositorio. Los datos están bajo licencia MIT y las partes de terceros figuran en [NOTICE](NOTICE.md).
 
@@ -24,7 +26,7 @@ Todas las pegatinas se sirven desde la CDN de jsDelivr (con CORS), así que pued
 <img src="https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/stickers/Coraciiformes/Alcedinidae/Alcedo_atthis.webp" alt="Martín pescador común" width="240">
 ```
 
-Para buscar un ave por su nombre, cargue [`data/stickers.json`](data/stickers.json) (2,7 MB: nombre científico, inglés y chino, ruta del archivo y la página de la especie en birdalbum.com para cada una de las 11 011 especies; las 91 pegatinas de subespecies figuran en `forms`, dentro de `data/species.json`). Los nombres en 43 idiomas están en [`data/names.csv`](data/names.csv).
+Para buscar un ave por su nombre, cargue [`data/stickers.json`](data/stickers.json) (2,7 MB: nombre científico, inglés y chino, ruta del archivo y la página de la especie en birdalbum.com para cada especie; las 91 pegatinas de subespecies figuran en `forms`, dentro de `data/species.json`). Los nombres en 43 idiomas están en [`data/names.csv`](data/names.csv).
 
 ```js
 const idx = await (await fetch("https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/data/stickers.json")).json();

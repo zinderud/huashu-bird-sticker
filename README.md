@@ -2,7 +2,7 @@
 
 <img src="previews/header.webp" alt="huashu-bird-sticker: specimen drawer, body-size lineup and family plates" width="100%">
 
-**花叔开源的全球鸟类贴纸库：按全球统一鸟类名录AviList整理的11011种鸟，每种一张白边贴纸，附多语种鸟名和分布、形态、保护等级数据。贴纸出自花叔做的观鸟App「鸣迹」。[中文说明 →](README.zh-Hans.md)**
+**花叔开源的全球鸟类贴纸库：按全球统一鸟类名录AviList整理的1.1万多种鸟，每种一张白边贴纸，附多语种鸟名和分布、形态、保护等级数据。贴纸出自花叔做的观鸟App「鸣迹」。[中文说明 →](README.zh-Hans.md)**
 
 **English** · [简体中文](README.zh-Hans.md) · [繁體中文](README.zh-Hant.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [العربية](README.ar.md)
 
@@ -10,11 +10,13 @@
 
 **See the whole library in use at [birdalbum.com](https://birdalbum.com/?utm_source=github&utm_medium=readme&utm_campaign=bird-sticker).** Bird Album is a free bird guide built on these stickers: look up any species by name in 15 languages, see where it lives and which months it is around, and open a map of 8,171 birding hotspots that shows what people are seeing at each one this month.
 
-By [Huashu (花叔)](https://github.com/alchaincyf), from the bird-watching app Mingji (鸣迹). 11,011 bird species across 45 orders and 249 families, following [AviList v2026](https://www.avilist.org/), the unified global checklist first published in 2025 (the IOC list has ended in its favour). Every species that AviList does not flag as extinct or possibly extinct is included, plus 43 flagged species that already had a sticker: extinct, extinct in the wild, possibly extinct, or, for two, once extinct in the wild and since reintroduced (see `extinctionStatus`). Every species has a sticker. Each species comes with structured data: taxonomy, names in up to 43 languages, cross-database IDs, and what each sticker was made from.
+By [Huashu (花叔)](https://github.com/alchaincyf), from the bird-watching app Mingji (鸣迹). More than 11,000 bird species across 45 orders and 249 families, following [AviList v2026](https://www.avilist.org/), the unified global checklist first published in 2025 (the IOC list has ended in its favour). Every species that AviList does not flag as extinct or possibly extinct is included, plus 43 flagged species that already had a sticker: extinct, extinct in the wild, possibly extinct, or, for two, once extinct in the wild and since reintroduced (see `extinctionStatus`). Every species has a sticker. Each species comes with structured data: taxonomy, names in up to 43 languages, cross-database IDs, and what each sticker was made from.
 
 > **Version 2.0 moved the taxonomy from IOC 15.2 to AviList v2026.** 82 species changed their scientific name (and so their `id` and sticker path), 91 former species are now subspecies of another species, and 30 new species were split off. Every change is listed in [`data/crosswalk-ioc15.2-avilist2026.csv`](data/crosswalk-ioc15.2-avilist2026.csv), and each record keeps its old IOC ID under `previous`. See [CHANGELOG](CHANGELOG.md).
 
 ![40 stickers from 15 bird orders](previews/hero.webp)
+
+**AI-generated, and every file says so.** Each sticker file carries XMP/IPTC metadata stating that it is an AI-generated illustration, not a photograph (IPTC Digital Source Type `trainedAlgorithmicMedia`), which AI system was used, that it was not verified by experts and may contain errors, the license, and a link back to this repository.
 
 **License in short:** the stickers are licensed under [CC BY 4.0](LICENSE.md): use them for anything, including commercial work, editing and redistribution, as long as you credit huashu-bird-sticker with a link to this repository. The data is MIT, and third-party parts are listed in [NOTICE](NOTICE.md).
 
@@ -26,7 +28,7 @@ Every sticker is served by the jsDelivr CDN (CORS enabled), so you can put it st
 <img src="https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/stickers/Coraciiformes/Alcedinidae/Alcedo_atthis.webp" alt="Common Kingfisher" width="240">
 ```
 
-To look a bird up by name, load [`data/stickers.json`](data/stickers.json) (2.7 MB: scientific, English and Chinese name, file path and the species page on birdalbum.com for each of the 11,011 species; the 91 subspecies stickers are listed under `forms` in `data/species.json`). Names in 43 languages are in [`data/names.csv`](data/names.csv).
+To look a bird up by name, load [`data/stickers.json`](data/stickers.json) (2.7 MB: scientific, English and Chinese name, file path and the species page on birdalbum.com for each species; the 91 subspecies stickers are listed under `forms` in `data/species.json`). Names in 43 languages are in [`data/names.csv`](data/names.csv).
 
 ```js
 const idx = await (await fetch("https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/data/stickers.json")).json();

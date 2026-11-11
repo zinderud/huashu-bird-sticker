@@ -8,11 +8,13 @@
 
 **Découvrez toute la bibliothèque en situation sur [birdalbum.com](https://birdalbum.com/fr/?utm_source=github&utm_medium=readme&utm_campaign=bird-sticker).** Bird Album est un guide des oiseaux gratuit construit sur ces autocollants : cherchez n'importe quelle espèce par son nom dans 15 langues, voyez où elle vit et à quels mois on peut la croiser, et ouvrez une carte de 8 171 sites d'observation qui montre ce que les gens observent ce mois-ci à chacun.
 
-11 011 espèces d'oiseaux réparties en 45 ordres et 249 familles, d'après [AviList v2026](https://www.avilist.org/), la liste mondiale unifiée publiée pour la première fois en 2025 (la liste de l'IOC a pris fin à son profit). Toutes les espèces qu'AviList ne signale pas comme éteintes ou possiblement éteintes sont incluses, plus 43 espèces signalées qui avaient déjà un autocollant : éteintes, éteintes à l'état sauvage, possiblement éteintes ou, pour deux d'entre elles, autrefois éteintes à l'état sauvage puis réintroduites (voir `extinctionStatus`). Chaque espèce a un autocollant. Chaque espèce est accompagnée de données structurées : taxonomie, noms dans jusqu'à 43 langues, identifiants dans d'autres bases de données et ce à partir de quoi chaque autocollant a été généré.
+Plus de 11 000 espèces d'oiseaux réparties en 45 ordres et 249 familles, d'après [AviList v2026](https://www.avilist.org/), la liste mondiale unifiée publiée pour la première fois en 2025 (la liste de l'IOC a pris fin à son profit). Toutes les espèces qu'AviList ne signale pas comme éteintes ou possiblement éteintes sont incluses, plus 43 espèces signalées qui avaient déjà un autocollant : éteintes, éteintes à l'état sauvage, possiblement éteintes ou, pour deux d'entre elles, autrefois éteintes à l'état sauvage puis réintroduites (voir `extinctionStatus`). Chaque espèce a un autocollant. Chaque espèce est accompagnée de données structurées : taxonomie, noms dans jusqu'à 43 langues, identifiants dans d'autres bases de données et ce à partir de quoi chaque autocollant a été généré.
 
 > **La version 2.0 a fait passer la taxonomie de l'IOC 15.2 à AviList v2026.** 82 espèces ont changé de nom scientifique (donc d'`id` et de chemin d'autocollant), 91 anciennes espèces sont désormais des sous-espèces d'une autre espèce et 30 nouvelles espèces ont été scindées. Tous les changements sont listés dans [`data/crosswalk-ioc15.2-avilist2026.csv`](data/crosswalk-ioc15.2-avilist2026.csv), et chaque fiche conserve son ancien identifiant IOC dans `previous`. Voir le [CHANGELOG](CHANGELOG.md).
 
 ![40 autocollants de 15 ordres d’oiseaux](previews/hero.webp)
+
+**Générés par IA, et chaque fichier l'indique.** Les métadonnées XMP/IPTC de chaque autocollant précisent qu'il s'agit d'une illustration générée par IA et non d'une photographie (type de source numérique IPTC `trainedAlgorithmicMedia`), le système d'IA utilisé, qu'elle n'a pas été vérifiée par des experts et peut contenir des erreurs, la licence et un lien vers ce dépôt.
 
 **Licence en bref :** les autocollants sont sous licence [CC BY 4.0](LICENSE.md) : vous pouvez les utiliser pour tout, y compris en usage commercial, les modifier et les redistribuer, à condition de citer huashu-bird-sticker avec un lien vers ce dépôt. Les données sont sous licence MIT, et les éléments provenant de tiers sont listés dans [NOTICE](NOTICE.md).
 
@@ -24,7 +26,7 @@ Chaque autocollant est servi par le CDN jsDelivr (CORS activé) : vous pouvez l�
 <img src="https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/stickers/Coraciiformes/Alcedinidae/Alcedo_atthis.webp" alt="Martin-pêcheur d’Europe" width="240">
 ```
 
-Pour chercher un oiseau par son nom, chargez [`data/stickers.json`](data/stickers.json) (2,7 Mo : nom scientifique, anglais et chinois, chemin du fichier et page de l’espèce sur birdalbum.com pour chacune des 11 011 espèces ; les 91 autocollants de sous-espèces sont listés sous `forms` dans `data/species.json`). Les noms en 43 langues sont dans [`data/names.csv`](data/names.csv).
+Pour chercher un oiseau par son nom, chargez [`data/stickers.json`](data/stickers.json) (2,7 Mo : nom scientifique, anglais et chinois, chemin du fichier et page de l’espèce sur birdalbum.com pour chaque espèce ; les 91 autocollants de sous-espèces sont listés sous `forms` dans `data/species.json`). Les noms en 43 langues sont dans [`data/names.csv`](data/names.csv).
 
 ```js
 const idx = await (await fetch("https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/data/stickers.json")).json();

@@ -8,11 +8,13 @@
 
 **라이브러리 전체가 실제로 쓰이는 모습은 [birdalbum.com](https://birdalbum.com/ko/?utm_source=github&utm_medium=readme&utm_campaign=bird-sticker)에서 볼 수 있습니다.** Bird Album은 이 스티커로 만든 무료 조류 가이드입니다. 15개 언어로 종 이름을 검색하고, 그 새가 어디에 살고 어느 달에 볼 수 있는지 확인할 수 있으며, 탐조지 8,171곳이 표시된 지도에서 각 장소에서 이번 달 사람들이 어떤 새를 보고 있는지 열어 볼 수 있습니다.
 
-새 11,011종, 45개 목 249개 과. 전 세계 통합 조류 목록 [AviList v2026](https://www.avilist.org/)을 따라 정리했습니다. AviList는 2025년에 처음 공개된 전 세계 통합 목록입니다(IOC 목록은 업데이트를 마치고 AviList로 넘어갔습니다). AviList가 멸종이나 멸종 가능성으로 분류하지 않은 종은 모두 들어 있고, 멸종 관련 표시가 있지만 이미 스티커가 있던 43종도 남겨 두었습니다. 표시는 멸종, 야생 절멸, 멸종 가능성이며, 그중 2종은 야생에서 절멸했다가 다시 도입된 종입니다(`extinctionStatus` 참고). 모든 종에 스티커가 있습니다. 각 종에는 분류, 최대 43개 언어의 이름, 여러 데이터베이스의 ID, 각 스티커가 무엇을 바탕으로 생성되었는지 같은 구조화된 데이터가 함께 들어 있습니다.
+새 1만 1천여 종, 45개 목 249개 과. 전 세계 통합 조류 목록 [AviList v2026](https://www.avilist.org/)을 따라 정리했습니다. AviList는 2025년에 처음 공개된 전 세계 통합 목록입니다(IOC 목록은 업데이트를 마치고 AviList로 넘어갔습니다). AviList가 멸종이나 멸종 가능성으로 분류하지 않은 종은 모두 들어 있고, 멸종 관련 표시가 있지만 이미 스티커가 있던 43종도 남겨 두었습니다. 표시는 멸종, 야생 절멸, 멸종 가능성이며, 그중 2종은 야생에서 절멸했다가 다시 도입된 종입니다(`extinctionStatus` 참고). 모든 종에 스티커가 있습니다. 각 종에는 분류, 최대 43개 언어의 이름, 여러 데이터베이스의 ID, 각 스티커가 무엇을 바탕으로 생성되었는지 같은 구조화된 데이터가 함께 들어 있습니다.
 
 > **2.0 버전에서 분류를 IOC 15.2에서 AviList v2026으로 바꿨습니다.** 82종의 학명이 바뀌었고(그에 따라 `id`와 스티커 경로도 바뀝니다), 독립종이었던 91종이 다른 종의 아종이 되었으며, 30종이 새로 분할되었습니다. 모든 변경 사항은 [`data/crosswalk-ioc15.2-avilist2026.csv`](data/crosswalk-ioc15.2-avilist2026.csv)에 정리했고, 각 레코드의 `previous`에는 예전 IOC ID를 남겨 두었습니다. [CHANGELOG](CHANGELOG.md)도 참고하세요.
 
 ![15개 목에서 고른 스티커 40장](previews/hero.webp)
+
+**AI 생성이라는 사실을 모든 파일에 적어 두었습니다.** 각 스티커 파일의 XMP/IPTC 메타데이터에는 AI로 생성한 일러스트이며 사진이 아니라는 점(IPTC 디지털 소스 유형 `trainedAlgorithmicMedia`), 사용한 AI 시스템, 전문가 검증을 거치지 않아 오류가 있을 수 있다는 점, 라이선스, 이 저장소 링크가 들어 있습니다.
 
 **라이선스 한눈에 보기:** 스티커는 [CC BY 4.0](LICENSE.md)입니다. huashu-bird-sticker를 밝히고 이 저장소 링크를 달면 상업적 이용을 포함해 어떤 용도로든 쓸 수 있고, 수정과 재배포도 가능합니다. 데이터는 MIT이며, 제3자에게서 온 부분은 [NOTICE](NOTICE.md)에 정리되어 있습니다.
 
@@ -24,7 +26,7 @@
 <img src="https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/stickers/Coraciiformes/Alcedinidae/Alcedo_atthis.webp" alt="물총새" width="240">
 ```
 
-이름으로 스티커를 찾으려면 [`data/stickers.json`](data/stickers.json)을 불러오세요(2.7 MB. 11,011종 각각의 학명, 영어명, 중국어명, 파일 경로, birdalbum.com 종 페이지. 아종 스티커 91장은 `data/species.json`의 `forms`에 있습니다). 43개 언어의 이름은 [`data/names.csv`](data/names.csv)에 있습니다.
+이름으로 스티커를 찾으려면 [`data/stickers.json`](data/stickers.json)을 불러오세요(2.7 MB. 각 종의 학명, 영어명, 중국어명, 파일 경로, birdalbum.com 종 페이지. 아종 스티커 91장은 `data/species.json`의 `forms`에 있습니다). 43개 언어의 이름은 [`data/names.csv`](data/names.csv)에 있습니다.
 
 ```js
 const idx = await (await fetch("https://cdn.jsdelivr.net/gh/alchaincyf/huashu-bird-sticker@main/data/stickers.json")).json();
